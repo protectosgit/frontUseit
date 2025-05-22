@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/prueba-tecnica-angular"
+  publish = "dist/prueba-tecnica-angular/browser"
   command = "npm run build"
 
 # Regla de redirección para SPA
