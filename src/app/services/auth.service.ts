@@ -21,11 +21,16 @@ export class AuthService {
   // Método para iniciar sesión
   // Recibe las credenciales y verifica contra el backend
   login(credenciales: Credenciales): Observable<AuthResponse> {
-    return this.http.get<Credenciales[]>(`${this.apiUrl}/credenciales?usuario=${credenciales.usuario}&password=${credenciales.password}`)
+    return this.http.get<Credenciales[]>(`${this.apiUrl}/credenciales`)
       .pipe(
         map(response => {
+          // Verifico localmente si existe un usuario con esas credenciales
+          const usuarioEncontrado = response.find(
+            user => user.usuario === credenciales.usuario && user.password === credenciales.password
+          );
+          
           // Si encuentro un usuario con esas credenciales
-          if (response && response.length > 0) {
+          if (usuarioEncontrado) {
             // Guardo un token simple (en un proyecto real usaría JWT)
             localStorage.setItem('token', 'jwt-token-simulado');
             localStorage.setItem('usuario', credenciales.usuario);
