@@ -22,7 +22,7 @@ Esta es una aplicación de demostración desarrollada con Angular 18 que simula 
 
 1. Clona este repositorio:
    ```
-   git clone https://github.com/tu-usuario/prueba-tecnica-angular.git
+   git clone https://github.com/protectosgit/frontUseit.git
    cd prueba-tecnica-angular
    ```
 
@@ -41,7 +41,11 @@ npm run dev
 
 Este comando iniciará tanto el servidor de desarrollo de Angular (en el puerto 4200) como el servidor json-server (en el puerto 3000) simultáneamente.
 
-También puedes ejecutar cada uno por separado:
+También puedes ejecutar cada uno por separado: asi
+
+http://localhost:4200/login  ||   http://localhost:3000
+
+
 
 - Servidor de desarrollo Angular:
   ```

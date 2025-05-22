@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
-  // Para despliegue en producción, usaremos un servicio de API simulada
-  // En un caso real, deberías reemplazar esto por la URL de tu backend en producción
+  // Para despliegue en producción, usaremos el servicio de API simulada
   apiUrl: 'https://my-json-server.typicode.com/FelicianoMos/prueba-tecnica-angular'
 }; 

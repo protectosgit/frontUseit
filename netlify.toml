@@ -1,0 +1,9 @@
+[build]
+  publish = "dist/prueba-tecnica-angular"
+  command = "npm run build"
+
+# Regla de redirección para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
