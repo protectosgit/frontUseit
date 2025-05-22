@@ -1,0 +1,78 @@
+<!-- Contenedor principal con el fondo degradado -->
+<div class="login-container">
+  <div class="row justify-content-center w-100">
+    <div class="col-md-8 col-lg-6 col-xl-5">
+      <!-- Tarjeta de login con elevación para efecto flotante -->
+      <mat-card class="login-card mat-elevation-z8">
+        <!-- Cabecera centrada con el título de bienvenida -->
+        <div class="text-center login-header">
+          <mat-card-title class="login-title">Bienvenido</mat-card-title>
+          <mat-card-subtitle>Ingresa tus credenciales para continuar</mat-card-subtitle>
+        </div>
+        <mat-card-content>
+          <!-- Formulario de login con validación básica -->
+          <form (ngSubmit)="onLogin(); $event.preventDefault()" #loginForm="ngForm" class="login-form">
+            <!-- Campo de usuario con icono de persona -->
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Usuario</mat-label>
+              <span matPrefix class="icon-container"><i class="material-icons icon-prefix">person</i></span>
+              <input 
+                matInput 
+                type="text" 
+                name="usuario" 
+                [(ngModel)]="credenciales.usuario" 
+                required>
+            </mat-form-field>
+
+            <!-- Campo de contraseña con icono de candado y botón para mostrar/ocultar -->
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Contraseña</mat-label>
+              <span matPrefix class="icon-container"><i class="material-icons icon-prefix">lock</i></span>
+              <input 
+                matInput 
+                [type]="hidePassword ? 'password' : 'text'" 
+                name="password" 
+                [(ngModel)]="credenciales.password"
+                required>
+              <!-- Botón de ojito para mostrar u ocultar la contraseña -->
+              <button mat-icon-button matSuffix (click)="togglePasswordVisibility($event)" type="button" class="icon-button">
+                <i class="material-icons icon-suffix">{{hidePassword ? 'visibility_off' : 'visibility'}}</i>
+              </button>
+            </mat-form-field>
+
+            <!-- Mensaje de error que solo aparece si hay algún problema de login -->
+            @if (errorMessage) {
+              <div class="alert alert-danger">
+                <i class="material-icons error-icon">error_outline</i>
+                {{ errorMessage }}
+              </div>
+            }
+
+            <!-- Botón de iniciar sesión que cambia según el estado -->
+            <div class="d-grid gap-2 mt-4">
+              <button 
+                mat-raised-button 
+                color="primary" 
+                type="submit" 
+                class="login-button"
+                [disabled]="loginForm.invalid || isLoading">
+                <!-- Spinner de carga mientras procesa el login -->
+                @if (isLoading) {
+                  <mat-spinner diameter="24" color="accent"></mat-spinner>
+                  <span>Cargando...</span>
+                <!-- Texto normal con icono de login cuando está listo -->
+                } @else {
+                  <!-- Uso ng-container para solucionar el error de proyección en Angular Material -->
+                  <ng-container>
+                    <i class="material-icons login-icon">login</i>
+                  </ng-container>
+                  <span>Iniciar Sesión</span>
+                }
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

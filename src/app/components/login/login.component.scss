@@ -1,0 +1,204 @@
+/* Contenedor principal que ocupa toda la pantalla con fondo degradado */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Degradado de azul a morado */
+}
+
+/* Tarjeta blanca que contiene el formulario de login */
+.login-card {
+  width: 100%;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2) !important; /* Sombra pronunciada para efecto flotante */
+  background-color: #fff;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sección superior de la tarjeta que contiene el logo y título */
+.login-header {
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+/* Logo circular en la parte superior */
+.login-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid #f1f1f1; /* Borde blanco alrededor del logo */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para el logo */
+  object-fit: cover;
+}
+
+/* Título "Iniciar Sesión" */
+.login-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+}
+
+/* Contenedor del formulario con campos de usuario y contraseña */
+.login-form {
+  padding: 10px 15px 0;
+}
+
+/* Campos de formulario (usuario y contraseña) */
+.mat-form-field {
+  margin-bottom: 15px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Contenedor para los iconos laterales en los inputs */
+.icon-container {
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 10px;
+}
+
+/* Icono al inicio del input (ej: usuario, candado) */
+.icon-prefix {
+  color: #6c757d;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* Icono al final del input (ej: ver contraseña) */
+.icon-suffix {
+  color: #6c757d;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* Botones con iconos */
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icono para mensajes de error */
+.error-icon {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Icono de login en el botón principal */
+.login-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Alerta para mensajes de error (credenciales incorrectas) */
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Icono dentro de las alertas */
+.alert mat-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Botón principal de iniciar sesión */
+.login-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  height: auto;
+  border-radius: 30px; /* Botón redondeado tipo "pill" */
+  transition: all 0.3s ease; /* Transición suave para el hover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efecto hover sobre el botón de login */
+.login-button:hover:not([disabled]) {
+  transform: translateY(-2px); /* Se eleva ligeramente al pasar el mouse */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Alineación del icono dentro del botón */
+.login-button mat-icon {
+  margin-right: 8px;
+}
+
+/* Subtítulo bajo el título principal */
+mat-card-subtitle {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: #666;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+/* Spinner de carga cuando se está validando */
+mat-spinner {
+  margin-right: 10px;
+}
+
+/* Ajustes para espaciado de prefijos en Angular Material */
+::ng-deep .mat-mdc-form-field-infix {
+  padding-left: 0 !important; /* Elimina padding izquierdo predeterminado */
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  padding-left: 0 !important; /* Elimina padding izquierdo del wrapper */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  /* Reducción de tamaños y espacios para móviles */
+  .login-card {
+    padding: 20px;
+  }
+
+  .login-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .login-title {
+    font-size: 26px;
+  }
+
+  mat-card-subtitle {
+    font-size: 16px;
+  }
+
+  .login-button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Ajustes para pantallas grandes */
+  .login-card {
+    max-width: 100%;
+    padding: 40px;
+  }
+}

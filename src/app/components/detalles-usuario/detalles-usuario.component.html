@@ -1,0 +1,61 @@
+<!-- Uso mi componente de header reutilizable y le paso el título como parámetro -->
+<!-- También le conecto el evento de logout para cerrar sesión -->
+<app-header [titulo]="'Detalles del Usuario'" (logoutEvent)="logout()"></app-header>
+
+<div class="container">
+  <!-- Mientras carga los datos muestro un spinner centrado -->
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  <!-- Si ya tengo los datos del usuario, muestro la tarjeta con su información -->
+  } @else if (usuario) {
+    <mat-card>
+      <!-- Encabezado de la tarjeta con la foto/avatar, nombre y puesto -->
+      <mat-card-header>
+        <!-- Avatar circular con icono de persona -->
+        <div mat-card-avatar class="user-avatar">
+          <mat-icon>person</mat-icon>
+        </div>
+        <!-- Nombre del usuario en grande -->
+        <mat-card-title>{{ usuario.nombre }}</mat-card-title>
+        <!-- Puesto del usuario como subtítulo -->
+        <mat-card-subtitle>{{ usuario.puesto }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <!-- Contenido principal con los datos del usuario -->
+      <mat-card-content>
+        <div class="info-section">
+          <!-- Primera fila con email y teléfono -->
+          <div class="info-row">
+            <!-- Bloque de email con su icono -->
+            <div class="info-item">
+              <mat-icon>email</mat-icon>
+              <p><strong>Email:</strong> {{ usuario.email }}</p>
+            </div>
+            <!-- Bloque de teléfono con su icono -->
+            <div class="info-item">
+              <mat-icon>phone</mat-icon>
+              <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+            </div>
+          </div>
+          <!-- Segunda fila con departamento -->
+          <div class="info-row">
+            <!-- Bloque de departamento con su icono -->
+            <div class="info-item">
+              <mat-icon>business</mat-icon>
+              <p><strong>Departamento:</strong> {{ usuario.departamento }}</p>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+
+      <!-- Pie de la tarjeta con el botón para volver -->
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="volver()">
+          <mat-icon>arrow_back</mat-icon> Volver
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>

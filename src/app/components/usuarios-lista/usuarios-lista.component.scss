@@ -1,0 +1,164 @@
+/* Estilo de la tarjeta principal que contiene la tabla */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+  margin-bottom: 30px;
+}
+
+/* Encabezado de la tarjeta donde está el título y la búsqueda */
+.card-header {
+  padding: 15px 20px;
+}
+
+/* Color de fondo para el encabezado - azul primario de Angular Material */
+.primary-background {
+  background-color: #3f51b5 !important; /* !important para asegurar que se aplique sobre otros estilos */
+}
+
+/* Estilo del título "Usuarios del Sistema" con color lila */
+.system-users-title {
+  color: #E6E6FA; /* Lila claro para contrastar con el fondo azul */
+  font-weight: 500;
+}
+
+/* Icono de personas junto al título de la tabla */
+.table-title-icon {
+  vertical-align: bottom;
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+/* Contenedor del campo de búsqueda */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Icono de lupa dentro del campo de búsqueda */
+.search-icon {
+  position: absolute; /* Posicionado sobre el input */
+  left: 10px;
+  color: #6c757d;
+}
+
+/* Campo de texto para la búsqueda */
+.search-input {
+  padding: 8px 15px 8px 35px; /* Padding izquierdo para dejar espacio al icono */
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  color: white;
+  width: 250px;
+  outline: none;
+  transition: all 0.3s ease; /* Animación suave al cambiar tamaño */
+}
+
+/* Estilo del placeholder del campo de búsqueda */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Efecto al enfocar el campo de búsqueda */
+.search-input:focus {
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al enfocar */
+  width: 280px; /* Se expande ligeramente al escribir */
+}
+
+/* Tabla de usuarios ocupa todo el ancho disponible */
+table {
+  width: 100%;
+}
+
+/* Estilo del encabezado de las columnas */
+.mat-mdc-header-cell {
+  background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px;
+}
+
+/* Estilo de las celdas con los datos */
+.mat-mdc-cell {
+  padding: 12px 15px;
+  font-size: 14px;
+}
+
+/* Fila del encabezado de la tabla */
+.header-row {
+  height: 60px;
+}
+
+/* Filas de datos */
+.table-row {
+  height: 55px;
+  transition: background-color 0.2s; /* Transición suave para el hover */
+}
+
+/* Efecto hover sobre las filas */
+.table-row:hover {
+  background-color: #f8f9fa; /* Cambia el fondo al pasar el mouse */
+}
+
+/* Celda que contiene los botones de acción */
+.actions-cell {
+  text-align: center;
+}
+
+/* Botón circular de acción (ver detalles) */
+.action-button {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+}
+
+/* Icono dentro del botón de acción */
+.action-button i {
+  font-size: 18px;
+}
+
+/* Contador de usuarios en la parte inferior */
+.users-count {
+  font-size: 14px;
+  color: #6c757d;
+  padding: 10px 15px;
+}
+
+/* Celda que se muestra cuando no hay resultados de búsqueda */
+.no-data-cell {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Contenedor que permite scroll horizontal en dispositivos pequeños */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Input de búsqueda más pequeño en móviles */
+  .search-input {
+    width: 180px;
+  }
+  
+  /* Input al enfocar en móviles */
+  .search-input:focus {
+    width: 200px;
+  }
+  
+  /* Reorganiza elementos del encabezado en columna para móviles */
+  .card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Espacio para el buscador en móviles */
+  .search-container {
+    margin-top: 15px;
+  }
+}

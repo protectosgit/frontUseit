@@ -1,0 +1,56 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "email": "juan@ejemplo.com",
+      "telefono": "123-456-7890",
+      "puesto": "Desarrollador Frontend",
+      "departamento": "Tecnología"
+    },
+    {
+      "id": 2,
+      "nombre": "María González",
+      "email": "maria@ejemplo.com",
+      "telefono": "234-567-8901",
+      "puesto": "Diseñadora UX/UI",
+      "departamento": "Diseño"
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos Rodríguez",
+      "email": "carlos@ejemplo.com",
+      "telefono": "345-678-9012",
+      "puesto": "Desarrollador Backend",
+      "departamento": "Tecnología"
+    },
+    {
+      "id": 4,
+      "nombre": "Ana Martínez",
+      "email": "ana@ejemplo.com",
+      "telefono": "456-789-0123",
+      "puesto": "Project Manager",
+      "departamento": "Administración"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro Sánchez",
+      "email": "pedro@ejemplo.com",
+      "telefono": "567-890-1234",
+      "puesto": "DevOps Engineer",
+      "departamento": "Operaciones"
+    }
+  ],
+  "credenciales": [
+    {
+      "usuario": "admin",
+      "password": "admin123",
+      "id": 1
+    },
+    {
+      "usuario": "usuario",
+      "password": "user123",
+      "id": 2
+    }
+  ]
+} 

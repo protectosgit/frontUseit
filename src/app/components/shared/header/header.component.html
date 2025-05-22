@@ -1,0 +1,13 @@
+<!-- Barra superior que se muestra en todas las páginas una vez logueado -->
+<mat-toolbar color="primary">
+  <!-- El título de la página que recibo como Input -->
+  <span>{{ titulo }}</span>
+  <!-- Espacio flexible que empuja el nombre del usuario y botón al lado derecho -->
+  <span class="spacer"></span>
+  <!-- Nombre del usuario actual sacado del localStorage -->
+  <span>Bienvenido, {{ nombreUsuario }}</span>
+  <!-- Botón de logout que emite el evento para cerrar sesión -->
+  <button mat-icon-button aria-label="Cerrar sesión" (click)="onLogout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
